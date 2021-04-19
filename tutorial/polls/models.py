@@ -1,3 +1,11 @@
 from django.db import models
 
-# Create your models here.
+class Article(models.Model):
+    article_title = models.CharField('название статьи', max_length=255)
+    article_text = models.TextField('текст')
+    pub_date = models.DateTimeField('дата публикации')
+class Comment(models.Model):
+    article = models.ForeignKey(Article, on_delete=models.CASCADE)
+    auth_name = models.CharField('автор', max_length=50)
+    comment_text = models.CharField('коментарий', max_length=200)
+
