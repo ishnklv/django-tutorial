@@ -1,4 +1,6 @@
 from django.db import models
+import datetime
+from django.utils import timezone
 
 class Article(models.Model):
     article_title = models.CharField('название статьи', max_length=255)
@@ -7,6 +9,8 @@ class Article(models.Model):
 
     def __str__(self):
         return self.article_title
+    def was_published_recently(self):
+        return self.pub_date >= (timezone.now() - datetime.timedelta(days = 7))
 
 class Comment(models.Model):
     article = models.ForeignKey(Article, on_delete=models.CASCADE)
