@@ -10,4 +10,4 @@
 .idea/
 .DS_Store
 *.sqlite3
-
+*.file
