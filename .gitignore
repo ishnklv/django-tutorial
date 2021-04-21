@@ -1,5 +1,0 @@
-venv/
-.idea/
-.DS_Store
-*.sqlite3
-error.txt
