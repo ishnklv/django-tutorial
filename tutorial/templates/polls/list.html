@@ -3,11 +3,18 @@
 {% block title %} Последние статьи {% endblock %}
 
 {% block content %}
+    <h1 style="text-align: center;">Статьи</h1>
     {%if latest_articles_list%}
         {% for a in latest_articles_list %}
-            <a href="{% url 'polls:detail' a.id %}">{{ a.article_title }}</a>
+            <div class="article">
+                <a style="color: blue; text-decoration: none;" href="{% url 'polls:detail' a.id %}">{{ a.article_title }}</a><br>
+                <a style="color: #000; text-decoration: none; font-weight: lighter" href="#">{{a.pub_date}}</a>
+            </div>
+            <hr>
         {% endfor %}
     {% else %}
-        Статьи не найдены
+        <div class="alert alert-warning" role="alert">
+            Статьи не найдены!!!
+        </div>
     {% endif %}
 {% endblock %}

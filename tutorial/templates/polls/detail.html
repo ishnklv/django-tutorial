@@ -20,7 +20,9 @@
             </p>
         {% endfor %}
     {% else %}
-    Комментарии не найдены
+    <div class="alert alert-warning" role="alert">
+        Комментарии не найдены
+    </div>
     {% endif %}
 
     <hr>
@@ -28,8 +30,12 @@
     <form action="{% url 'polls:leave_comment' article.id %}" method="POST">
 
         {% csrf_token %}
-        <input type="text" required placeholder="Ваше имя" name="name"><br>
-        <textarea name="text" required placeholder="Текст комментария" cols="30" rows="10"></textarea><br>
-        <button type="submit">Отправить</button>
+        <div class="form-group">
+            <input name="name" type="text" class="form-control mb-2 w-5" id="exampleFormControlInput1" placeholder="Ваше имя">
+        </div>
+        <div class="form-group">
+            <textarea name="text" class="form-control mb-2" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+        <button class="btn btn-primary" type="submit">Отправить</button>
     </form>
 {% endblock %}
