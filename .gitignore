@@ -10,4 +10,4 @@ venv/
 /httpRequests/
 .DS_Store
 *.sqlite3
-
+test.txt
