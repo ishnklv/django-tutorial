@@ -8,6 +8,6 @@ venv/
 /dataSources.local.xml
 # Editor-based HTTP Client requests
 /httpRequests/
-/.DS_Store
+.DS_Store
 *.sqlite3
 test.txt
