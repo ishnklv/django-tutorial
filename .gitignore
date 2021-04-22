@@ -9,5 +9,5 @@ venv/
 # Editor-based HTTP Client requests
 /httpRequests/
 /.DS_Store
-*.sqlite3
+/db.sqlite3
 test.txt
